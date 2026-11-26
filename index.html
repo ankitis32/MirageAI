@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIRAGE AI — Intelligence, engineered for nations and enterprises (Cinematic template)</title>
+<meta name="description" content="MIRAGE AI is a UAE-born artificial intelligence and data analytics house. We design, build, and operate sovereign-grade AI systems that turn national ambition and enterprise complexity into measurable outcomes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230B0A17'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%238B5CF6' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='6' fill='%23FF5FA2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0A17; --panel:#151329; --panel-2:#1C1A38;
+    --line:#332E5C; --line-soft:#231F42;
+    --text:#F5F3FF; --muted:#B0A8D6; --muted-2:#7A729E;
+    --violet:#8B5CF6; --pink:#FF5FA2; --cyan:#38E1D0; --amber:#FFC15E;
+    --disp:'Sora', sans-serif; --body:'IBM Plex Sans', sans-serif; --mono:'IBM Plex Mono', monospace;
+    --max:1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--ink); color:var(--text); font-family:var(--body); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  img,video{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+  ::selection{ background:#8B5CF6; color:#fff; }
+  :focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; }
+  .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:var(--cyan); display:flex; align-items:center; gap:12px; }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--cyan); }
+  h1,h2,h3{ font-family:var(--disp); font-weight:700; letter-spacing:-0.01em; }
+  h2{ font-size:clamp(28px,4vw,42px); line-height:1.15; margin-top:14px; }
+  .lede{ color:var(--muted); font-size:17px; max-width:56ch; margin-top:16px; }
+  .reveal{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none;} }
+
+  /* NAV */
+  header{ position:fixed; top:0; left:0; right:0; z-index:200; padding:22px 0; transition:background .3s, padding .3s, border-color .3s; border-bottom:1px solid transparent; }
+  header.solid{ background:rgba(11,10,23,0.85); backdrop-filter:blur(10px); padding:14px 0; border-color:var(--line-soft); }
+  nav{ display:flex; align-items:center; justify-content:space-between; max-width:var(--max); margin:0 auto; padding:0 32px; }
+  .logo{ font-family:var(--disp); font-weight:800; font-size:15px; letter-spacing:0.14em; display:flex; align-items:center; gap:10px; }
+  .logo .mark{ width:9px; height:9px; border-radius:50%; background:linear-gradient(135deg,var(--violet),var(--pink)); box-shadow:0 0 10px var(--violet); }
+  .nav-links{ display:flex; gap:32px; font-size:13px; }
+  .nav-links a{ color:var(--muted); transition:color .2s; }
+  .nav-links a:hover{ color:#fff; }
+  .nav-cta{ font-family:var(--mono); font-size:12px; padding:10px 20px; border-radius:8px; background:linear-gradient(90deg,var(--violet),var(--pink)); color:#fff; }
+  .nav-toggle{ display:none; background:none; border:0; color:#fff; font-size:22px; }
+  @media (max-width:820px){
+    .nav-links{ position:fixed; top:58px; left:0; right:0; background:var(--panel); flex-direction:column; padding:20px 32px; gap:16px; transform:translateY(-140%); transition:transform .3s; }
+    .nav-links.open{ transform:none; }
+    .nav-toggle{ display:block; } .nav-cta{ display:none; }
+  }
+
+  /* CINEMATIC HERO */
+  .cine-hero{ position:relative; height:100vh; overflow:hidden; }
+  .cine-hero video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+  .cine-overlay{ position:absolute; inset:0; z-index:1;
+    background:
+      linear-gradient(180deg, rgba(11,10,23,0.05) 0%, rgba(11,10,23,0.1) 55%, rgba(11,10,23,0.92) 100%),
+      radial-gradient(ellipse 900px 500px at 15% 15%, rgba(139,92,246,0.2), transparent 60%);
+  }
+  .scroll-cue{ position:absolute; bottom:26px; left:32px; z-index:2; font-family:var(--mono); font-size:11px; color:var(--muted); display:flex; align-items:center; gap:10px; }
+  .scroll-cue span{ width:1px; height:28px; background:linear-gradient(var(--cyan), transparent); display:block; }
+  .mute-toggle{ position:absolute; bottom:22px; right:32px; z-index:2; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.28); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; color:#fff; cursor:pointer; transition:background .2s, border-color .2s; }
+  .mute-toggle:hover{ background:rgba(255,255,255,0.16); border-color:var(--cyan); }
+  .mute-toggle svg{ width:18px; height:18px; }
+  .mute-toggle .icon-on{ display:none; }
+  .mute-toggle.is-unmuted .icon-off{ display:none; }
+  .mute-toggle.is-unmuted .icon-on{ display:block; }
+
+  /* INTRO (revealed on scroll, below hero) */
+  .intro-section{ padding-top:100px; }
+  .intro-section h1{ font-family:var(--disp); font-weight:700; font-size:clamp(34px,5.4vw,58px); line-height:1.08; max-width:16ch; letter-spacing:-0.01em; }
+  .intro-section h1 em{ font-style:normal; background:linear-gradient(90deg,var(--violet),var(--pink) 55%,var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .intro-section .lede{ font-size:18px; margin-top:22px; }
+  .cine-cta{ display:flex; gap:16px; margin-top:36px; flex-wrap:wrap; }
+  .btn{ font-family:var(--mono); font-size:13px; padding:14px 26px; border-radius:10px; display:inline-flex; align-items:center; gap:10px; transition:all .2s; }
+  .btn-solid{ background:linear-gradient(90deg,var(--violet),var(--pink)); color:#fff; box-shadow:0 10px 28px -10px rgba(139,92,246,0.6); }
+  .btn-solid:hover{ filter:brightness(1.1); }
+  .btn-ghost{ border:1px solid rgba(255,255,255,0.25); color:#fff; }
+  .btn-ghost:hover{ border-color:var(--cyan); color:var(--cyan); }
+
+  .section{ padding:110px 0; border-top:1px solid var(--line-soft); }
+  .section-head{ max-width:640px; }
+
+  /* ABOUT split */
+  .about-split{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; margin-top:20px; }
+  .about-split .stat-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  .stat-tile{ background:var(--panel); padding:28px; }
+  .stat-tile .n{ font-family:var(--disp); font-size:32px; font-weight:800; background:linear-gradient(90deg,var(--violet),var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .stat-tile .l{ font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:6px; }
+  @media (max-width:900px){ .about-split{ grid-template-columns:1fr; } }
+
+  /* CAPABILITIES — SYMMETRIC 2-COLUMN, UNIFORM, CONTENT HIDDEN UNTIL OPENED */
+  .bento{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:50px; }
+  .bento-card{ background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:26px; cursor:pointer; transition:border-color .25s, background .25s; position:relative; overflow:hidden; }
+  .bento-card:hover{ border-color:var(--violet); background:var(--panel-2); }
+  .bento-card::after{ content:"+"; position:absolute; top:24px; right:24px; font-family:var(--mono); font-size:15px; color:var(--muted-2); transition:transform .25s, color .25s; }
+  .bento-card.open::after{ transform:rotate(45deg); color:var(--cyan); }
+  .bento-card .idx{ font-family:var(--mono); color:var(--cyan); font-size:13px; padding-right:24px; }
+  .bento-card h3{ font-size:19px; margin-top:10px; padding-right:24px; }
+  .bento-card .tagline{ display:none; color:var(--muted); font-size:13.5px; margin-top:10px; }
+  .bento-card.open .tagline{ display:block; }
+  .bento-detail{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
+  .bento-card.open .bento-detail{ margin-top:14px; }
+  .bento-detail-inner{ display:flex; flex-wrap:wrap; gap:10px; padding-top:2px; }
+  .bento-detail-inner span{ font-family:var(--mono); font-size:11.5px; color:var(--muted); border:1px solid var(--line); border-radius:20px; padding:6px 12px; }
+  @media (max-width:700px){ .bento{ grid-template-columns:1fr; } }
+
+  /* SECTORS MARQUEE */
+  .marquee{ margin-top:50px; overflow:hidden; border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); padding:26px 0; }
+  .marquee-track{ display:flex; gap:60px; width:max-content; animation:scroll-x 30s linear infinite; }
+  @keyframes scroll-x{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .marquee-track span{ font-family:var(--disp); font-size:22px; font-weight:600; color:var(--muted); white-space:nowrap; }
+  .marquee-track span b{ color:var(--cyan); font-weight:600; margin-right:8px; }
+  @media (prefers-reduced-motion:reduce){ .marquee-track{ animation:none; flex-wrap:wrap; } }
+
+  /* PROCESS — HORIZONTAL */
+  .process-row{ display:grid; grid-template-columns:repeat(5,1fr); gap:24px; margin-top:56px; position:relative; }
+  .process-row::before{ content:""; position:absolute; top:15px; left:0; right:0; height:1px; background:var(--line); }
+  .proc-step{ position:relative; padding-top:44px; text-align:center; }
+  .proc-step .dot{ position:absolute; top:8px; left:50%; transform:translateX(-50%); width:15px; height:15px; border-radius:50%; background:var(--ink); border:2px solid var(--violet); }
+  .proc-step .idx{ font-family:var(--mono); font-size:12px; color:var(--cyan); }
+  .proc-step h3{ font-size:16px; margin-top:8px; }
+  .proc-step p{ color:var(--muted); font-size:13.5px; margin-top:8px; }
+  @media (max-width:900px){ .process-row{ grid-template-columns:1fr 1fr; } .process-row::before{ display:none; } .proc-step{ text-align:left; } .proc-step .dot{ left:0; transform:none; } }
+
+  /* STANDARD */
+  .std-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-top:50px; }
+  .std-card{ background:var(--panel); padding:30px 26px; }
+  .std-card h3{ font-size:16px; } .std-card p{ color:var(--muted); font-size:13.5px; margin-top:10px; }
+  @media (max-width:900px){ .std-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .std-grid{ grid-template-columns:1fr; } }
+
+  /* CONTACT */
+  .contact{ padding:120px 0 70px; }
+  .contact-links{ margin-top:30px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  @media (max-width:560px){ .contact-links{ grid-template-columns:1fr; } }
+  .contact-links a{ font-family:var(--mono); font-size:15px; border-bottom:1px solid var(--line); padding-bottom:14px; display:flex; justify-content:space-between; }
+  .contact-links a:hover{ color:var(--cyan); }
+
+  /* SIGNATURE STRIP */
+  .signature{ padding:44px 0; text-align:center; border-top:1px solid var(--line-soft); }
+  .signature .sig-location{ font-family:var(--mono); font-size:12px; letter-spacing:0.08em; color:var(--muted-2); }
+  .signature .sig-tagline{ font-family:var(--disp); font-weight:700; font-size:clamp(20px,3vw,28px); margin-top:12px; background:linear-gradient(90deg,var(--violet),var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  footer{ border-top:1px solid var(--line-soft); padding:26px 0; }
+  footer .wrap{ display:flex; justify-content:space-between; font-family:var(--mono); font-size:11.5px; color:var(--muted-2); flex-wrap:wrap; gap:10px; }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav>
+    <a href="#top" class="logo"><span class="mark"></span>MIRAGE AI</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="mailto:info@mirageai.ae" class="nav-cta">Start a conversation</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- CINEMATIC HERO -->
+  <section class="cine-hero">
+    <video id="heroVideo" autoplay muted playsinline poster="mirage-poster.jpg">
+      <source src="mirage-teaser.mp4" type="video/mp4">
+    </video>
+    <div class="cine-overlay"></div>
+    <div class="scroll-cue"><span></span>SCROLL</div>
+    <button class="mute-toggle" id="muteToggle" aria-label="Unmute video" aria-pressed="false">
+      <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><line x1="16" y1="9" x2="22" y2="15"/><line x1="22" y1="9" x2="16" y2="15"/></svg>
+      <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+    </button>
+  </section>
+
+  <!-- INTRO — content begins here, on scroll -->
+  <section class="intro-section" id="intro">
+    <div class="wrap">
+      <div class="eyebrow reveal">Sovereign AI for nations and enterprises</div>
+      <h1 class="reveal">Intelligence, engineered for <em>nations and enterprises</em>.</h1>
+      <p class="lede reveal">MIRAGE AI is a UAE-born artificial intelligence and data analytics house. We design, build, and operate sovereign-grade AI systems that turn national ambition and enterprise complexity into measurable outcomes.</p>
+      <div class="cine-cta reveal">
+        <a href="mailto:info@mirageai.ae" class="btn btn-solid">Start a conversation →</a>
+        <a href="#capabilities" class="btn btn-ghost">See what we do</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap about-split">
+      <div class="reveal">
+        <div class="eyebrow">About us</div>
+        <h2>One house. Three disciplines, applied together.</h2>
+        <p class="lede">Vision-led strategy, sovereign-grade engineering, and measurable outcomes — delivered as one connected practice, not three separate vendors.</p>
+      </div>
+      <div class="stat-grid reveal">
+        <div class="stat-tile"><div class="n">10</div><div class="l">CAPABILITIES</div></div>
+        <div class="stat-tile"><div class="n">08</div><div class="l">SECTORS SERVED</div></div>
+        <div class="stat-tile"><div class="n">05</div><div class="l">DELIVERY STAGES</div></div>
+        <div class="stat-tile"><div class="n">06</div><div class="l">STACK DOMAINS</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES BENTO -->
+  <section class="section" id="capabilities">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Capabilities</div>
+        <h2>Ten capabilities. One technology partner.</h2>
+        <p class="lede">Tap a card to explore what's inside.</p>
+      </div>
+      <div class="bento reveal" id="bentoList">
+        <div class="bento-card" data-tags="Readiness assessment,Use-case portfolio,Governance design">
+          <div class="idx">01 — AI Strategy</div><h3>Strategy before software</h3>
+          <p class="tagline">We align leadership, data, and technology around one executable AI roadmap — prioritized by value, sequenced by readiness.</p>
+          <div class="bento-detail"><div class="bento-detail-inner"></div></div>
+        </div>
+        <div class="bento-card" data-tags="Sovereign Cloud,Data Platforms,MLOps &amp; Scale">
+          <div class="idx">02 — AI Infrastructure</div><h3>The foundation intelligence runs on</h3>
+          <p class="tagline">Sovereign compute, modern data platforms, and MLOps pipelines — engineered for scale and control.</p>
+          <div class="bento-detail"><div class="bento-detail-inner"></div></div>
+        </div>
+        <div class="bento-card" data-tags="Real-time,Unified,Predictive">
+          <div class="idx">03 — Data Analytics</div><h3>From data to decisive action</h3>
+          <p class="tagline">Executive intelligence platforms that unify data and put real-time clarity in front of decision-makers.</p>
+          <div class="bento-detail"><div class="bento-detail-inner"></div></div>
+        </div>
+        <div class="bento-card" data-tags="AI Agents,Knowledge Bank,Document Intelligence">
+          <div class="idx">04 — Enterprise AI</div><h3>An AI workforce for the enterprise</h3>
+          <p class="tagline">Autonomous agents, searchable institutional memory, and documents read by AI.</p>
+          <div class="bento-detail"><div class="bento-detail-inner"></div></div>
+        </div>
+        <div class="bento-card" data-tags="Tender Automation,Smart Government,Digital Services">
+          <div class="idx">05 — Government AI</div><h3>AI in service of the nation</h3>
+          <p class="tagline">Faster procurement, data-driven policy, and seamless citizen experiences at scale.</p>
+          <div class="bento-detail"><div class="bento-detail-inner"></div></div>
+        </div>
+        <div class="bento-card" data-tags="Digital Twin,Predictive Maintenance,Plant Intelligence">
+          <div class="idx">06 — Industrial AI</div><h3>Heavy industry, intelligently run</h3>
+          <p class="tagline">Live virtual replicas, failures prevented before they occur, continuously optimized plants.</p>
+          <div class="bento-detail"><div class="bento-detail-inner"></div></div>
+        </div>
+        <div class="bento-card" data-tags="AI Security,Data Protection,Governance">
+          <div class="idx">07 — Cybersecurity</div><h3>Intelligence you can trust</h3>
+          <p class="tagline">Models hardened against emerging threats, sovereign encrypted data, compliance built in.</p>
+          <div class="bento-detail"><div class="bento-detail-inner"></div></div>
+        </div>
+        <div class="bento-card" data-tags="Application Development,Digital Experience,Maintenance &amp; Support,Modernisation">
+          <div class="idx">08 — Digital Application Services</div><h3>Design and build to continuous support</h3>
+          <p class="tagline">End-to-end application delivery, from mobile and web platforms to legacy modernisation.</p>
+          <div class="bento-detail"><div class="bento-detail-inner"></div></div>
+        </div>
+        <div class="bento-card" data-tags="Technology Specialists,Project &amp; Managed Teams,TAMM Resourcing">
+          <div class="idx">09 — Technology Resourcing</div><h3>Technology talent, ready to deliver</h3>
+          <p class="tagline">Flexible specialist teams aligned to scope, timelines, and delivery outcomes.</p>
+          <div class="bento-detail"><div class="bento-detail-inner"></div></div>
+        </div>
+        <div class="bento-card" data-tags="Augmented Reality,Virtual Reality,Digital Twins,Immersive Experiences">
+          <div class="idx">10 — Immersive Technologies</div><h3>AI in physical and digital experiences</h3>
+          <p class="tagline">Bringing artificial intelligence into physical and digital experiences.</p>
+          <div class="bento-detail"><div class="bento-detail-inner"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTORS MARQUEE -->
+  <section class="section" id="sectors" style="padding-bottom:0;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Where we operate</div>
+        <h2>Eight sectors. One standard of excellence.</h2>
+      </div>
+    </div>
+    <div class="marquee reveal">
+      <div class="marquee-track">
+        <span><b>01</b>Government</span><span><b>02</b>Oil &amp; Gas</span><span><b>03</b>Healthcare</span><span><b>04</b>Education</span><span><b>05</b>Construction</span><span><b>06</b>Manufacturing</span><span><b>07</b>Banking</span><span><b>08</b>Aviation</span>
+        <span><b>01</b>Government</span><span><b>02</b>Oil &amp; Gas</span><span><b>03</b>Healthcare</span><span><b>04</b>Education</span><span><b>05</b>Construction</span><span><b>06</b>Manufacturing</span><span><b>07</b>Banking</span><span><b>08</b>Aviation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS VERTICAL -->
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">How we deliver</div>
+        <h2>A disciplined path from vision to value.</h2>
+      </div>
+      <div class="process-row reveal">
+        <div class="proc-step"><span class="dot"></span><div class="idx">01</div><h3>Discover</h3><p>Assess, align, prioritize</p></div>
+        <div class="proc-step"><span class="dot"></span><div class="idx">02</div><h3>Design</h3><p>Architect the right solution</p></div>
+        <div class="proc-step"><span class="dot"></span><div class="idx">03</div><h3>Develop</h3><p>Build, train, validate</p></div>
+        <div class="proc-step"><span class="dot"></span><div class="idx">04</div><h3>Deploy</h3><p>Integrate and go live</p></div>
+        <div class="proc-step"><span class="dot"></span><div class="idx">05</div><h3>Support</h3><p>Operate, optimize, evolve</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDARD -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">The MIRAGE standard</div>
+        <h2>Chosen for what we deliver, not what we promise.</h2>
+      </div>
+      <div class="std-grid reveal">
+        <div class="std-card"><h3>AI Governance by Design</h3><p>Ethics, compliance, and oversight built in from day one</p></div>
+        <div class="std-card"><h3>Enterprise Security</h3><p>Mission-critical protection at every layer</p></div>
+        <div class="std-card"><h3>Business Outcome Focus</h3><p>Every engagement measured by results delivered</p></div>
+        <div class="std-card"><h3>Production-Grade Delivery</h3><p>Systems that run in production, not demos</p></div>
+        <div class="std-card"><h3>Sovereign AI Architecture</h3><p>National data residency and full control</p></div>
+        <div class="std-card"><h3>Trusted Engineering</h3><p>Disciplined craft, dependable at national scale</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="eyebrow">Let's talk</div>
+      <h2>Empowering your next smarter decision.</h2>
+      <div class="contact-links">
+        <a href="https://mirageai.ae" target="_blank" rel="noopener">mirageai.ae <span>↗</span></a>
+        <a href="mailto:info@mirageai.ae">info@mirageai.ae <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE -->
+  <section class="signature">
+    <div class="wrap">
+      <div class="sig-location">Abu Dhabi · Dubai — United Arab Emirates</div>
+      <div class="sig-tagline">Designed in Abu Dhabi. Built for the Future.</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> MIRAGE AI</span>
+    <span>ONE PLATFORM, INFINITE POSSIBILITIES.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('solid', window.scrollY > 40);
+  });
+
+  const heroVideo = document.getElementById('heroVideo');
+  const muteToggle = document.getElementById('muteToggle');
+  muteToggle.addEventListener('click', () => {
+    heroVideo.muted = !heroVideo.muted;
+    const unmuted = !heroVideo.muted;
+    muteToggle.classList.toggle('is-unmuted', unmuted);
+    muteToggle.setAttribute('aria-pressed', String(unmuted));
+    muteToggle.setAttribute('aria-label', unmuted ? 'Mute video' : 'Unmute video');
+  });
+  heroVideo.addEventListener('ended', () => {
+    heroVideo.muted = true;
+    muteToggle.classList.remove('is-unmuted');
+    muteToggle.setAttribute('aria-pressed', 'false');
+    muteToggle.setAttribute('aria-label', 'Unmute video');
+    heroVideo.currentTime = 0;
+    heroVideo.play();
+  });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  document.querySelectorAll('.bento-card').forEach(card => {
+    const inner = card.querySelector('.bento-detail-inner');
+    const tags = (card.dataset.tags || '').split(',');
+    tags.forEach(t => { const s = document.createElement('span'); s.textContent = t; inner.appendChild(s); });
+    const detail = card.querySelector('.bento-detail');
+    if (card.classList.contains('open')) detail.style.maxHeight = detail.scrollHeight + 'px';
+    card.addEventListener('click', () => {
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.bento-card.open').forEach(o => { o.classList.remove('open'); o.querySelector('.bento-detail').style.maxHeight = null; });
+      if (!isOpen) { card.classList.add('open'); detail.style.maxHeight = detail.scrollHeight + 'px'; }
+    });
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
